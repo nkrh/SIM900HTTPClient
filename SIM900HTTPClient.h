@@ -43,6 +43,7 @@ class SIM900HTTPClient {
 		SIM900_RESPONSE_STATUS post(const char * url, const char * parameters, char * response, int responseLength);
 		SIM900_RESPONSE_STATUS post(const char * parameters, char * response, int responseLength);
 		SIM900_RESPONSE_STATUS get(const char *url, char * response, int responseLength);
+		SIM900_RESPONSE_STATUS get(const char *url);
 		void waitForResponse(const unsigned int timeOut = DEFAULT_TIMEOUT, const byte responseCount = 1);
 		bool waitForExpectedResponse(
 			const char * expectedResponse, 

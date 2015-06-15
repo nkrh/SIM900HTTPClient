@@ -216,17 +216,21 @@ bool SIM900HTTPClient::HTTPData(const char * data, const unsigned int timeOut) {
 
 SIM900_RESPONSE_STATUS SIM900HTTPClient::get(const char * url, char * response, int responseLength) {
 
-	HTTPParam("URL", url);
-	HTTPAction(GET);
-
-	waitForResponse(60000);	
-
-	if(responseReaderStatus == SIM900_RESPONSE_TIMEOUT)
+	if(get(url) == SIM900_RESPONSE_TIMEOUT)
 		return SIM900_RESPONSE_TIMEOUT;
 
 	HTTPRead(0, responseLength, response);	
 
 	return SIM900_RESPONSE_FINISHED;
+}
+
+SIM900_RESPONSE_STATUS SIM900HTTPClient::get(const char * url) {
+
+	HTTPParam("URL", url);
+	HTTPAction(GET);
+
+	waitForResponse(60000);	
+	return responseReaderStatus;
 }
 
 SIM900_RESPONSE_STATUS SIM900HTTPClient::post(const char * url, const char * parameters, char * response, int responseLength) {
