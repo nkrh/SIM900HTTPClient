@@ -25,6 +25,8 @@ SIM900HTTPClient HTTPClient;
 unsigned long int lastSend = 0;
 
 void setup() {
+
+	Serial.negin(9600);
     
     // Wait until the SIM900 module ready
     while(!HTTPClient.begin());

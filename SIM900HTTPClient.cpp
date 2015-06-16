@@ -11,7 +11,7 @@ bool SIM900HTTPClient::GSMBegin() {
 
 	GSM.begin(BAUD_RATE);
 	for(int i = 0; i < 5; ++i) {	
-		if(sendATCommandAndExpects("AT", "OK")) {
+		if(sendATCommandAndExpects("AT", "AT") || sendATCommandAndExpects("AT", "OK")) {
             sendATCommandAndExpects("ATE0", "OK");	
             HTTPParam("CID", "1");
             HTTPParam("UA", "Arduino");
