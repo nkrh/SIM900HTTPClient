@@ -1,8 +1,8 @@
 SIM900HTTPClient	KEYWORD1
-post    KEYWORD2
-get    KEYWORD2
-setUrl   KEYWORD2
-setPost KEYWORD2
+post	KEYWORD2
+get	KEYWORD2
+setUrl	KEYWORD2
+setPost	KEYWORD2
 save	KEYWORD2
-connected   KEYWORD2
-sendATCommandAndExpects KEYWORD2
+connected	KEYWORD2
+sendATCommandAndExpects	KEYWORD2
